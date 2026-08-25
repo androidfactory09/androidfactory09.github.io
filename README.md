@@ -1,4 +1,4 @@
-# androidstudi0.github.io
+# androidfactory09.github.io
 
 Public pages for **AndroidStudi0** — the privacy policy and support page for
 each published game, and the `app-ads.txt` that AdMob crawls.
