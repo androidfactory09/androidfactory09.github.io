@@ -23,4 +23,64 @@ h2{color:#e0a760}a{color:#f0b366}
 .card p,.sub,footer{color:#a49a8b}
 code{background:#2a241a}
 footer{border-color:#332c21}}
-</style></head><body><main><h1>Sort Safari — Support</h1><p class=sub>Questions, bugs, or anything that looks wrong.</p><p>On Google Play: <a href="https://play.google.com/store/apps/details?id=com.androidfactory09.sortsafari">Sort Safari</a>.</p><h2>Get in touch</h2><p><a href="mailto:androidfactory09@gmail.com">androidfactory09@gmail.com</a></p><p>Please say which device and Android version you are on — it is usually the fastest way to find the problem.</p><h2>Privacy</h2><p><a href="../privacy/">Sort Safari privacy policy</a></p><footer><a href="../../">← AndroidStudi0</a> · <a href="mailto:androidfactory09@gmail.com">androidfactory09@gmail.com</a></footer></main></body></html>
+
+/* ---- landing page ---------------------------------------------------- */
+.hero{padding:1.5rem 0 .5rem}
+.hero h1{font-size:2.4rem;letter-spacing:-.02em}
+.tag{color:#6d6459;font-size:1.05rem;margin:.2rem 0 0}
+.game{border:1px solid #e7ddc9;border-radius:18px;padding:1.4rem;
+margin:1.6rem 0;background:#fffdf8}
+.gh{display:flex;gap:1.1rem;align-items:flex-start}
+.ico{border-radius:22%;flex:0 0 auto;box-shadow:0 3px 10px rgba(0,0,0,.13)}
+.game h2{margin:.1rem 0 .35rem}
+.pitch{margin:0 0 .9rem}
+.actions{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:0}
+.btn{display:inline-block;background:#a4590f;color:#fff;text-decoration:none;
+font-weight:600;padding:.6rem 1.1rem;border-radius:999px}
+.btn:hover,.btn:focus-visible{background:#8a4a0b}
+.lnk{padding:.6rem .7rem;text-decoration:none;font-weight:600}
+.lnk:hover,.lnk:focus-visible{text-decoration:underline}
+/* A scroll-snap strip: it is a native scroller, so it works with a finger,
+   a trackpad, a scrollbar and the keyboard without a line of JS. */
+.shots{display:flex;gap:.8rem;overflow-x:auto;scroll-snap-type:x mandatory;
+padding:1.1rem .2rem .4rem;margin:0 -.2rem;
+scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.shots:focus-visible{outline:2px solid #a4590f;outline-offset:3px;
+border-radius:12px}
+.shots figure{margin:0;flex:0 0 auto;scroll-snap-align:center;width:160px}
+.shots img{width:160px;height:284px;border-radius:12px;display:block;
+border:1px solid #e7ddc9;background:#f3ecdd;
+transition:transform .18s ease,box-shadow .18s ease}
+.shots figure:hover img{transform:translateY(-3px);
+box-shadow:0 8px 18px rgba(0,0,0,.14)}
+.shots figcaption{font-size:.78rem;color:#6d6459;margin-top:.4rem;
+line-height:1.35}
+.reveal{opacity:0;transform:translateY(10px);
+transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:520px){.gh{flex-direction:column}.hero h1{font-size:2rem}}
+@media(prefers-color-scheme:dark){
+.game{background:#201c15;border-color:#332c21}
+.tag,.shots figcaption{color:#a49a8b}
+.shots img{border-color:#332c21;background:#241f18}
+.btn{background:#e0a760;color:#17140f}
+.btn:hover,.btn:focus-visible{background:#f0b366}}
+/* Everything above degrades to a still page for anyone who has asked for
+   less motion. Shipping an animation that ignores that setting is the exact
+   defect this studio spent two days removing from its own game. */
+@media(prefers-reduced-motion:reduce){
+.reveal{opacity:1;transform:none;transition:none}
+.shots{scroll-behavior:auto;scroll-snap-type:none}
+.shots img,.shots figure:hover img{transition:none;transform:none}}
+</style></head><body><main><h1>Sort Safari — Support</h1><p class=sub>Questions, bugs, or anything that looks wrong.</p><p>On Google Play: <a href="https://play.google.com/store/apps/details?id=com.androidfactory09.sortsafari">Sort Safari</a>.</p><h2>Get in touch</h2><p><a href="mailto:androidfactory09@gmail.com">androidfactory09@gmail.com</a></p><p>Please say which device and Android version you are on — it is usually the fastest way to find the problem.</p><h2>Privacy</h2><p><a href="../privacy/">Sort Safari privacy policy</a></p><footer><a href="../../">← AndroidStudi0</a> · <a href="mailto:androidfactory09@gmail.com">androidfactory09@gmail.com</a></footer></main><script>
+(function(){
+ var els=document.querySelectorAll('.reveal');
+ var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function showAll(){for(var i=0;i<els.length;i++)els[i].classList.add('in');}
+ if(still||!('IntersectionObserver' in window)){showAll();return;}
+ var io=new IntersectionObserver(function(es){
+   es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+ },{rootMargin:'0px 0px -8% 0px'});
+ for(var i=0;i<els.length;i++)io.observe(els[i]);
+})();
+</script></body></html>
