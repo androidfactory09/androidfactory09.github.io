@@ -96,11 +96,20 @@ transition:opacity .5s ease,transform .5s ease}
 </ul>
 <p>  use as an in-game background, it is used <strong>only</strong> to draw that background and is</p>
 <p>  stored locally. It is never uploaded or shared. You can remove it at any time.</p>
-<p>None of this ever leaves your device. The released app does not request the</p>
-<p>Internet permission, so it has no ability to send your data anywhere. *(FLIP</p>
-<p>POINT 2 of 4 — an ads build <strong>does</strong> carry the Internet permission, because the</p>
-<p>ad network&#x27;s own manifest adds it, along with <code>AD_ID</code>. The game&#x27;s own data still</p>
-<p>never leaves the device)*</p>
+<p><strong>The app itself never sends any of this anywhere.</strong> The released app does not</p>
+<p>request the Internet permission, so it has no ability to transmit your data at</p>
+<p>all.</p>
+<p><strong>One thing Android itself does, which we should be straight about.</strong> Android&#x27;s</p>
+<p>own *Auto Backup* feature is switched on for this app, as it is for most apps by</p>
+<p>default. That means Android — not us — may copy your saved game to **your own</p>
+<p>Google Drive backup**, so that your safari comes back if you reinstall the game</p>
+<p>or move to a new phone. We think that is the right default: losing a collection</p>
+<p>you spent months on because you changed phone would be the worst thing this app</p>
+<p>could do to you.</p>
+<p>To be precise about it: that copy is made by the operating system, into your own</p>
+<p>Google account, and <strong>we never see it and cannot access it</strong>. If you would rather</p>
+<p>it did not happen, you can turn backup off for this app in Android&#x27;s own Settings</p>
+<p>→ Google → Backup, and everything will simply stay on the device.</p>
 <h2>Data we collect: none</h2>
 <p>We do not collect analytics, crash logs, advertising identifiers, location, contacts,</p>
 <p>or any personal or device information. Because nothing is collected, there is nothing</p>
